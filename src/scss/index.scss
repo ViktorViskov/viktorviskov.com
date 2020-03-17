@@ -1,0 +1,21 @@
+// mixins
+@mixin noPadMar {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+// variables
+$fist-color: rgb(241, 241, 241);
+
+
+
+// nullify
+body,h2 {
+    @include noPadMar;
+}
+
+// mainStyles
+
+
