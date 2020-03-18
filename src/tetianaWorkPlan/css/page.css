@@ -1,0 +1,51 @@
+body, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: white;
+}
+
+.week .day {
+  margin-top: 5px;
+  background-color: white;
+  text-align: center;
+  padding: 8px;
+}
+
+.week .day_disable {
+  opacity: 0.5;
+}
+
+.error {
+  background-color: red !important;
+}
+
+.week .day_current-day {
+  border: 2px solid green;
+  box-shadow: lightslategray 0 0 10px 2px;
+}
+
+.week .day_weekend {
+  background-color: #ffdcdc;
+}
+
+.week .day .day-name {
+  margin: 10px 0;
+}
+
+.week .day .time-container {
+  margin: 5px 0;
+}
+
+.week .day .time-container .start {
+  color: darkgreen;
+  font-weight: bold;
+}
+
+.week .day .time-container .stop {
+  color: darkred;
+  font-weight: bold;
+}
