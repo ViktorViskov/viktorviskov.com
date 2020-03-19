@@ -1,4 +1,21 @@
 <?php
-$login = filter_var(trim($_POST['login']),FILTER_SANITIZE_STRING);
-$password = filter_var(trim($_POST['password']),FILTER_SANITIZE_STRING);
+// імпорт бібліотеки
+require '../../lib/php/utils.php';
+
+// отримання і обробка данних від користувача
+$login = clearFilter($_POST['login']);
+$password = clearFilter($_POST['password']);
+
+// хешування паролю
+$password = hashPassword($password);
+
+$userData = searchUser($login,$password);
+if ($userData){
+    print "Привіт {$userData['name']}! Вітаємо в особистому кабінеті.";
+}
+else {
+    print "Логін або пароль введено невірно";
+}
+
+
 ?>

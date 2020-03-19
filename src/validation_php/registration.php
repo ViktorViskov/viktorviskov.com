@@ -1,4 +1,5 @@
 <?php
+// імпорт бібліотеки функцій
 require('../../lib/php/utils.php');
 
 // отримання і очистка даних від користувача
@@ -10,6 +11,7 @@ $passwordTwo = clearFilter($_POST["passwordTwo"]);
 // массив для помилок
 $errors = [];
 
+// виявлення помилок
 if (mb_strlen($login) < 4 || mb_strlen($login) > 20) {
     $errors[] = "Недопустима довжина логіну.(Від 4 до 20 символів)";
 }
@@ -31,21 +33,28 @@ else {
 
 
 
+// виведення масиву з помилками
 if ($errors){
-
-    // виведення масиву з помилками
     printArr($errors);
-
-exit();
+    exit();
 }
-else {   
-    // хешування паролю
-    $password = hashPassword($password);
 
-    // створення користувача
-    createUser($login,$password,$name);
+else {
+    // перевірка чи занятий логін
+    if (!chechUser($login)){
 
-    print "Користувача $login успішно зареєстовано.<br>";
+        // хешування паролю
+        $password = hashPassword($password);
+    
+        // створення користувача
+        createUser($login,$password,$name);
+    
+        print "Користувача $login успішно зареєстовано.<br>";
+    }
+    else {
+        print "$login даний логін використовуєтсья. Виберіть інший логін.<br>";
+    }
+    
     print "<a href='../index.html'>Повернутись на головну</a>";
 }
 ?>

@@ -30,11 +30,21 @@ function createUser($login, $password, $name){
     $mysql->close();
 }
 
-// пошук користувача в бд
+// пошук користувача в бд для авторизації
 function searchUser($login,$password){
     $mysql = connectToDb();
     $result = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
-    
+    $mysql->close();    
+    $user = $result->fetch_assoc();
+    return $user;
+}
+
+// пошук для перевірки чи зареєстрований користувач
+function chechUser($login){
+    $mysql = connectToDb();
+    $result = $mysql->query("SELECT `login` FROM `users` WHERE `login` = '$login'");
+    $user = $result->fetch_assoc();
+    return $user;
 }
 
 // очистка данних від користувача (логін)
