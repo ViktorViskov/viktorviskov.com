@@ -12,7 +12,6 @@ function hashPassword($password){
 }
 
 // зєднання з бд
-
 function connectToDb(){
     // Дані для підключення до бази даних
     $settings = [  'host'=>'localhost',
@@ -36,5 +35,10 @@ function searchUser($login,$password){
     $mysql = connectToDb();
     $result = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
     
+}
+
+// очистка данних від користувача (логін)
+function clearFilter($value){
+    return filter_var(trim($value),FILTER_SANITIZE_STRING);
 }
 ?>

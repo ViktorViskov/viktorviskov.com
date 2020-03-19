@@ -1,11 +1,11 @@
 <?php
 require('../../lib/php/utils.php');
 
-// trim видаляэ пробіли filter_var перевіряє на заборонені символи і видаляє правило записане в FILTER_SANITIZE_STRING
-$login = filter_var(trim($_POST['login']),FILTER_SANITIZE_STRING);
-$name = filter_var(trim($_POST['name']),FILTER_SANITIZE_STRING);
-$passwordOne = filter_var(trim($_POST['passwordOne']),FILTER_SANITIZE_STRING);
-$passwordTwo = filter_var(trim($_POST['passwordTwo']),FILTER_SANITIZE_STRING);
+// отримання і очистка даних від користувача
+$login = clearFilter($_POST["login"]);
+$name = clearFilter($_POST["name"]);
+$passwordOne = clearFilter($_POST["passwordOne"]);
+$passwordTwo = clearFilter($_POST["passwordTwo"]);
 
 // массив для помилок
 $errors = [];
@@ -43,7 +43,7 @@ else {
     $password = hashPassword($password);
 
     // створення користувача
-    createUser($login,$password,$name,$settingsForDb);
+    createUser($login,$password,$name);
 
     print "Користувача $login успішно зареєстовано.<br>";
     print "<a href='../index.html'>Повернутись на головну</a>";
