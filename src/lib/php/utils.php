@@ -14,38 +14,37 @@ function hashData($password){
     return $result;
 }
 
-// зєднання з бд
-function connectToDb(){
+// запит до бд
+function requestToDb($sqlCode){
     // Дані для підключення до бази даних
     $settings = [  'host'=>'localhost',
                     'userName'=>'root',
                     'password'=>'',
                     'dataBaseName'=>'test'];
-
-    return $mysql = new mysqli($settings['host'],$settings['userName'],$settings['password'],$settings['dataBaseName']);
+    // код функції
+    $mysql = new mysqli($settings['host'],$settings['userName'],$settings['password'],$settings['dataBaseName']);
+    $result = $mysql->query($sqlCode);
+    $mysql->close();
+    if ($result){
+        return $result;
+    }
 }
 
 // реєстрація нового користувача
 function createUser($login, $password, $name){
-    $mysql = connectToDb();
-    $mysql->query("INSERT INTO `users` (`login`,`password`,`name`) values ('$login','$password','$name')");
-    // закриття зєднання
-    $mysql->close();
+    requestToDb("INSERT INTO `users` (`login`,`password`,`name`) values ('$login','$password','$name')");
 }
 
 // пошук користувача в бд для авторизації
 function searchUser($login,$password){
-    $mysql = connectToDb();
-    $result = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
-    $mysql->close();    
+    $result = requestToDb("SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");    
     $user = $result->fetch_assoc();
     return $user;
 }
 
 // пошук для перевірки чи зареєстрований користувач
 function chechUser($login){
-    $mysql = connectToDb();
-    $result = $mysql->query("SELECT `login` FROM `users` WHERE `login` = '$login'");
+    $result = requestToDb("SELECT `login` FROM `users` WHERE `login` = '$login'");
     $user = $result->fetch_assoc();
     return $user;
 }

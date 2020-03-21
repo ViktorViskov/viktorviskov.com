@@ -34,7 +34,9 @@ else {
     $errors[] = "Введені паролі різні";
 }
 
-
+// хешування даних
+$login = hashData($login);        
+$password = hashData($password);    
 
 // виведення масиву з помилками
 if ($errors){
@@ -45,18 +47,13 @@ if ($errors){
 else {
     // перевірка чи занятий логін
     if (!chechUser($login)){
-
-        // хешування даних
-        $login = hashData($login);        
-        $password = hashData($password);
-    
         // створення користувача
         createUser($login,$password,$name);
     
         print "Користувача {$_POST['login']} успішно зареєстовано.<br>";
     }
     else {
-        print "$login даний логін використовуєтсья. Виберіть інший логін.<br>";
+        print "Логін {$_POST['login']} використовуєтсья. Виберіть інший логін.<br>";
     }
     
     print "<a href='../index.html'>Повернутись на головну</a>";
