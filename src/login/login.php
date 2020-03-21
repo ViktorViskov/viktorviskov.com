@@ -1,4 +1,7 @@
 <?php
+// логіка захисту
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+
 // імпорт бібліотеки
 require '../../lib/php/utils.php';
 
@@ -16,6 +19,9 @@ if ($userData){
 else {
     print "Логін або пароль введено невірно";
 }
-
+}
+else {
+    header("Location: ./");
+}
 
 ?>

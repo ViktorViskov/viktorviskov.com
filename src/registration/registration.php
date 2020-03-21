@@ -1,4 +1,7 @@
 <?php
+// логіка захисту
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+
 // імпорт бібліотеки функцій
 require('../../lib/php/utils.php');
 
@@ -56,5 +59,9 @@ else {
     }
     
     print "<a href='../index.html'>Повернутись на головну</a>";
+}
+}
+else {
+    header("Location: ./");
 }
 ?>
