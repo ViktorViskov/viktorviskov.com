@@ -46,13 +46,14 @@ else {
     // перевірка чи занятий логін
     if (!chechUser($login)){
 
-        // хешування паролю
-        $password = hashPassword($password);
+        // хешування даних
+        $login = hashData($login);        
+        $password = hashData($password);
     
         // створення користувача
         createUser($login,$password,$name);
     
-        print "Користувача $login успішно зареєстовано.<br>";
+        print "Користувача {$_POST['login']} успішно зареєстовано.<br>";
     }
     else {
         print "$login даний логін використовуєтсья. Виберіть інший логін.<br>";

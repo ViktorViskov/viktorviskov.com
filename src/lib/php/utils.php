@@ -6,8 +6,8 @@ function printArr($arr) {
     }
 }
 
-// хешування паролю
-function hashPassword($password){
+// хешування даних
+function hashData($password){
     $result = md5($password);
     $result = md5($result.$password);
     $result = md5($result.'<!.,a-zїы');

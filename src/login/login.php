@@ -9,8 +9,9 @@ require '../lib/php/utils.php';
 $login = clearFilter($_POST['login']);
 $password = clearFilter($_POST['password']);
 
-// хешування паролю
-$password = hashPassword($password);
+// хешування даних
+$login = hashData($login);
+$password = hashData($password);
 
 $userData = searchUser($login,$password);
 if ($userData){
