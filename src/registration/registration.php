@@ -3,7 +3,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 // імпорт бібліотеки функцій
-require('../../lib/php/utils.php');
+require('../lib/php/utils.php');
 
 // отримання і очистка даних від користувача
 $login = clearFilter($_POST["login"]);
@@ -61,7 +61,10 @@ else {
     print "<a href='../index.html'>Повернутись на головну</a>";
 }
 }
+
+
 else {
+    // перенаправлення на основну сторінку
     header("Location: ./");
 }
 ?>

@@ -3,7 +3,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 // імпорт бібліотеки
-require '../../lib/php/utils.php';
+require '../lib/php/utils.php';
 
 // отримання і обробка данних від користувача
 $login = clearFilter($_POST['login']);
