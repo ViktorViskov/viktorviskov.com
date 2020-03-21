@@ -23,8 +23,8 @@ body {
   width: 350px;
   margin: auto; }
   .form__title {
-    margin: 20px 0;
-    text-align: center; }
+    text-align: center;
+    margin: 20px 0; }
   .form__input {
     padding: 5px 20px;
     font-size: 20px;
@@ -38,7 +38,7 @@ body {
   .form__btn {
     padding: 5px 20px;
     font-size: 20px;
-    margin: 20px 0; }
+    margin: 10px 0 20px 0; }
 
 a {
   width: 350px;
