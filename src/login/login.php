@@ -17,7 +17,7 @@ $userData = searchUser($login,$password);
 if ($userData){
     // ставим куки
     setUsersCookie($userData, 30);
-    print "Привіт {$userData['name']}! Вітаємо в особистому кабінеті.";
+    header("Location: ../main");
 }
 else {
     print "Логін або пароль введено невірно";

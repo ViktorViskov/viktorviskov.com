@@ -17,6 +17,7 @@ function watch() {
     })
     gulp.watch('./src/scss/*.scss', style);
     gulp.watch('./src/*.html').on('change', browserSync.reload);
+    gulp.watch('./src/*/*.html').on('change', browserSync.reload);
     gulp.watch('./src/js/*.js').on('change', browserSync.reload);
 
 }

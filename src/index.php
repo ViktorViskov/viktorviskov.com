@@ -22,8 +22,7 @@
     <?php
     require "./lib/php/utils.php";
     if (isset($_COOKIE['login'])){
-        $userData = searchUser($_COOKIE['login'],$_COOKIE['password']);
-        print "Привіт {$userData['name']}";
+        header("Location: ./main");
     }
     ?>
 </body>
