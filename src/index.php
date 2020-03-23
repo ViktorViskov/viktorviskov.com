@@ -19,6 +19,13 @@
             <li class="list__item"><a href="#" class="list__link">Тест</a></li>
         </ul>
     </nav>
+    <?php
+    require "./lib/php/utils.php";
+    if (isset($_COOKIE['login'])){
+        $userData = searchUser($_COOKIE['login'],$_COOKIE['password']);
+        print "Привіт {$userData['name']}";
+    }
+    ?>
 </body>
 
 </html>

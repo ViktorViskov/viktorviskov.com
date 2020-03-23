@@ -16,11 +16,9 @@ function hashData($password){
 
 // запит до бд
 function requestToDb($sqlCode){
-    // Дані для підключення до бази даних
-    $settings = [  'host'=>'localhost',
-                    'userName'=>'root',
-                    'password'=>'',
-                    'dataBaseName'=>'test'];
+    // Імпорт даних для підключення до бази даних
+    require 'config.php';
+
     // код функції
     $mysql = new mysqli($settings['host'],$settings['userName'],$settings['password'],$settings['dataBaseName']);
     $result = $mysql->query($sqlCode);
@@ -52,5 +50,12 @@ function chechUser($login){
 // очистка данних від користувача (логін)
 function clearFilter($value){
     return filter_var(trim($value),FILTER_SANITIZE_STRING);
+}
+
+// встановлення куки
+function setUsersCookie($userData, $period){
+    setcookie("id", $userData['id'],time() + $period, "/");
+    setcookie("login", $userData['login'],time() + $period, "/");
+    setcookie("password", $userData['password'],time() + $period, "/");
 }
 ?>
