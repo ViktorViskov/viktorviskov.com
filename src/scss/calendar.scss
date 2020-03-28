@@ -1,0 +1,142 @@
+// mixins
+@mixin noPadMar {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin navFontStyles {
+    color: lightblue;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s;
+    position: relative;     
+    &:hover {
+        color: white;
+    }
+    &:active {
+        color: lightcyan;
+    }  
+}
+@mixin tableCellStyle {
+    padding: 5px 0;
+    border: 1px solid #000;    
+}
+
+
+
+// variables
+
+
+
+// nullify
+body {
+    @include noPadMar();
+}
+ul {
+    list-style: none;
+    @include noPadMar();
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+// mainStyles
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+.container {
+    margin: auto;
+    max-width: 1080px;
+    border: 1px solid red;
+}
+
+// styles
+
+.main-header {
+    background-color: green;
+    padding: 20px 0;
+    .container {
+        display: flex;
+        justify-content: space-between;      
+        .title {
+            color: white;
+        }
+        .list {
+            display: flex;
+        }
+        .list__item + .list__item {
+            margin-left: 20px;
+        }
+        .list__link {
+            @include navFontStyles()
+            &_active {
+                color: white;
+            }
+            &_exit {
+                color: white;
+                &:hover {
+                    color: lightblue;
+                }
+                &:active {
+                    color: rgb(133, 193, 212);
+                }
+            }
+        }
+        
+    }
+}
+// основні стилі таблиці
+.start {
+    color: red;
+}
+.stop {
+    color: green;
+}
+.total {
+    color: blue;
+}
+.weekend {
+    background-color: rgba(220, 20, 60, 0.2);
+}
+.table {
+    width: 100%;
+    border-collapse: collapse; 
+    
+    // назва таблиці
+    .caption {
+        text-align: center;
+        font-size: 40px;  
+        margin: 25px 0;     
+    }
+
+    // заголовок таблиці
+    .table-header {
+        &__row {
+            &_subtitle {
+                font-size: 16px;
+            }
+            &_title {
+                font-size: 18px;
+            }
+            th {
+                @include tableCellStyle();
+            }
+        }
+    }
+
+    // контент таблиці 
+    .table-body {
+        text-align: center;
+        &__row {
+            td {
+                @include tableCellStyle();
+                font-size: 16px;           
+            }
+        }
+    }
+}

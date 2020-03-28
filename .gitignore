@@ -105,3 +105,6 @@ dist
 
 # server configs
 config.php
+
+# images
+images
