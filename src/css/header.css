@@ -20,7 +20,7 @@ body {
 .container {
   margin: auto;
   max-width: 1080px;
-  border: 1px solid #000; }
+  border: 1px solid red; }
 
 .main-header {
   background-color: green;
