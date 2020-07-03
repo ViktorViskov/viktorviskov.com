@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: lightcyan;
+  padding: 30px 60px;
+}
+
+.list {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.item {
+  border: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  padding: 0 15px;
+}
+
+.name {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.name h1 {
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+.price {
+  display: flex;
+  font-style: italic;
+  font-weight: bold;
+  color: darkblue;
+}
+.gzB009 {
+  color: red;
+}
+.A95iT1 {
+  padding-left: 15px;
+}
