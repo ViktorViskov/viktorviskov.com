@@ -8,6 +8,35 @@ body {
     padding: 30px 60px;
 }
 
+/* header */
+.header__title {
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+    font-size: 30px;
+}
+
+/* nav */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.nav__link {
+    text-decoration: none;
+    display: block;
+    padding: 25px;
+    margin: 5px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+.header__description {
+    text-align: center;
+}
+
+/* стилі списку */
 .list {
     background-color: white;
     margin: 0;
@@ -50,45 +79,36 @@ body {
     padding-left: 15px;
 }
 
-@media screen and (max-width: 900px)
-{
-    .item
-    {
+/* адаптив */
+@media screen and (max-width: 900px) {
+    .item {
         font-size: 18px;
     }
 }
 
-@media screen and (max-width: 800px)
-{
-    .item
-    {
+@media screen and (max-width: 800px) {
+    .item {
         font-size: 15px;
     }
-    .A95iT1 
-    {
+    .A95iT1 {
         padding-left: 10px;
     }
-    
 }
 
-@media screen and (max-width: 650px)
-{
+@media screen and (max-width: 650px) {
     body {
         padding: 10px 20px;
     }
-    .item
-    {
+    .item {
         padding: 5px 10px;
     }
 }
 
-@media screen and (max-width: 525px)
-{
+@media screen and (max-width: 525px) {
     body {
         padding: 5px;
     }
-    .item
-    {
+    .item {
         padding: 10px 5px;
     }
     .A95iT1 {
@@ -97,5 +117,4 @@ body {
     .price {
         padding: 5px 0;
     }
-    
 }

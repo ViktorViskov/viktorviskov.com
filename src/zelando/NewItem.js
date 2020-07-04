@@ -1,0 +1,10 @@
+class NewItem 
+{
+    // inicialization 
+    constructor ()
+    {
+
+    }
+
+    
+}
