@@ -79,6 +79,31 @@ body {
     padding-left: 15px;
 }
 
+/* лічильник */
+.current {
+    font-size: 20px;
+    font-style: italic;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.total {
+    font-size: 20px;
+    font-style: italic;
+    color: darkred;
+    font-weight: bold;
+}
+
+/* кнопка видалити */
+.delete {
+    background-color: rgb(255, 212, 212);
+    border: 1px solid white;
+    color: black;
+    margin-left: 5px;
+    outline: hidden;
+    padding: 3px 5px;
+}
+
 /* адаптив */
 @media screen and (max-width: 900px) {
     .item {

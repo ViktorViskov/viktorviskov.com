@@ -14,7 +14,10 @@
             Zalando parser
         </h3>
         <p class="header__description">
-            Введіть посилання на сторінку і настисніть зберегти.
+            Зачекайте! Йде завантаження данних.
+        </p>
+        <p class="header__description">
+            Завантажено <span class="current">0</span> з <span class="total"></span>
         </p>
         <nav class="nav">
             <a href="./" class="nav__link">На головну</a>

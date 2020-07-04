@@ -1,6 +1,7 @@
 // імпорт бібліотек
-import {countItems, addEvent, checkInitList} from './utils.js';
+import {setCountItems, addEvent, checkInitList, blockShowBtn} from './utils.js';
 
 checkInitList();
-countItems();
+setCountItems();
 addEvent();
+blockShowBtn();

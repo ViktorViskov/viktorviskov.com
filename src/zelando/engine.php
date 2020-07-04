@@ -7,13 +7,11 @@ class takePrice
         $this->link = $link;
         $this->nameCN = $nameCN;
         $this->priceCN = $priceCN;
-
+        $this->name[1] = "Сталась помилка. Перевірте посилання.";
         $this->mkClientsHeader();
         $this->parseData();
         $this->formatData();
-        if ($this->link) {
-            $this->render();
-        }
+        $this->render();
     }
 
     // створюємо заголовок клієнта
@@ -38,6 +36,8 @@ class takePrice
     // пошук данних
     private function formatData()
     {
+        if ($this->rowData)
+        {
         // пошук назви 
         $pattern = "!<div class=\"$this->nameCN\">(.*?)</div>!si";
         preg_match($pattern, $this->rowData, $this->name);
@@ -45,6 +45,7 @@ class takePrice
         // пошук ціни
         $pattern = "!<div class=\"$this->priceCN\">(.*?)</div>!si";
         preg_match($pattern, $this->rowData, $this->price);
+        }
     }
 
     // рендер елемента
@@ -53,7 +54,8 @@ class takePrice
         print <<<PAGE
         <li class="item">
             <a href="$this->link" class="name">{$this->name[1]}</a>
-            <div class="price">{$this->price[1]}</div>
+            <div class="price">{$this->price[1]}</div></div>
+            <button class="delete">Видалити</button>
         </li>
         PAGE;
     }

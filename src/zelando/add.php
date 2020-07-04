@@ -22,7 +22,7 @@
     </header>
     <main class="main">
         <section class="section">
-            <input type="text" class="input">
+            <input type="text" class="input" placeholder="Вставте посилання">
             <button class="btnSave">Зберегти</button>
         </section>
     </main>

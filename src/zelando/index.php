@@ -17,7 +17,6 @@
         <nav class="nav">
             <a href="list.php" class="nav__link show">Переглянути список</a>
             <a href="add.php" class="nav__link add">Додати елемент</a>
-            <a href="#" class="nav__link edit">Редагувати список</a>
             <a href="#" class="nav__link clear">Очистити список</a>
         </nav>
     </header>
